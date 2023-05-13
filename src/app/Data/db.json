@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Mohamed Salah",
+      "email": "mohamed@yahoo.com"
+    },
+    {
+      "name": "Omar Salah",
+      "email": "Omar@gmail.com",
+      "id": 2
+    }
+  ]
+}

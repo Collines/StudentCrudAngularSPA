@@ -1,0 +1,51 @@
+<form [formGroup]="Validation" class="w-50 m-auto">
+  <div
+    class="alert alert-danger text-center"
+    [ngClass]="!isEmailValid || !isNameValid ? 'd-block' : 'd-none'"
+  >
+    <span [ngClass]="!isEmailValid ? 'd-block' : 'd-none'"
+      >Please enter your email</span
+    >
+    <span [ngClass]="!isNameValid ? 'd-block' : 'd-none'"
+      >Please enter your Name</span
+    >
+  </div>
+  <div class="form-group mb-3">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      [ngClass]="isEmailValid ? 'is-valid' : 'is-invalid'"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      formControlName="email"
+      [(ngModel)]="student.email"
+    />
+    <small
+      [ngClass]="isEmailValid ? 'd-none' : 'd-inline'"
+      class="form-text text-danger"
+      >Please Enter your Email</small
+    >
+  </div>
+  <div class="form-group mb-3">
+    <label for="exampleInputPassword1">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="name"
+      id="exampleInputPassword1"
+      [(ngModel)]="student.name"
+      [ngClass]="isNameValid ? 'is-valid' : 'is-invalid'"
+    />
+    <small
+      [ngClass]="isNameValid ? 'd-none' : 'd-inline'"
+      class="form-text text-danger"
+      >Please Enter a valid Name that contain 3 characters or more</small
+    >
+  </div>
+  <div class="form-group text-center">
+    <button type="submit" class="btn btn-primary" (click)="updateStudent()">
+      Update
+    </button>
+  </div>
+</form>
